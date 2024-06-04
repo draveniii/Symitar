@@ -3,11 +3,14 @@
 #Bank account class that keeps and manages account holder information and account funds
 
 class BankAccount:
-    def __init__(self, newAccountNumber, name, initialDeposit):
+    def __init__(self, newAccountNumber, newMember):
         
         self.accountNumber = newAccountNumber
-        self.accountHolderName = name
-        self.savings = initialDeposit  
+        self.member = newMember
+        self.savings
+
+
+        
                  
 
 
