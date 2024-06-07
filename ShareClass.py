@@ -10,7 +10,7 @@ class Share:
         self.interestRate = rate
         self.minimumBalance = minimumBalance
         self.currentBalance = initialDeposit
-
+ 
     def change_interestRate(self, newInterestRate):
         self.interestRate = newInterestRate
 

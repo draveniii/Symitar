@@ -9,10 +9,10 @@ class Member:
         self.memberAddress = address
         self.memberDOB = dateOfBirth
 
-    def change_member_name(self, newMemberName):
+    def change_memberName(self, newMemberName):
         self.memberName = newMemberName
 
-    def change_member_address(self, newMemberAddress):
+    def change_memberAddress(self, newMemberAddress):
         self.memberAddress = newMemberAddress
 
     def get_memberName(self):
