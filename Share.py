@@ -24,5 +24,11 @@ class Share:
     def deposit_funds(self, amountToDeposit):
         self.currentBalance += amountToDeposit
 
+    def get_currentBalance(self):
+        return self.currentBalance
+    
+    def get_shareName(self):
+        return self.shareName
+
     
     

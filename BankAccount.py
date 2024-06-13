@@ -41,7 +41,7 @@ class BankAccount:
         #Creates and adds a share to the account depending on the userInput
         if shareInput == 0:
             savings = Share(0, "Savings", .05, 25)
-            self.members.append(savings)
+            self.shares.append(savings)
         elif shareInput == 1: 
             checking  = Share(1, "Checking", .00, 0)
             self.shares.append(checking)
