@@ -5,7 +5,7 @@ class AccountsDataStore:
     def __init__(self):
 
         #Holds account objects
-        accountsArray = []
+        self.accountsArray = []
 
     #Method to add an account to the data store
     def add_account(self, newAccount):
