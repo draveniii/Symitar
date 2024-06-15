@@ -23,6 +23,8 @@ class Main(QMainWindow):
 
         #Connects buttons to methods
         self.findAccountButton.clicked.connect(self.change_current_working_account)
+
+        self.
     
     #Opens a new window to gather information for creating a new account
     def open_account_creation_window(self):
@@ -35,20 +37,45 @@ class Main(QMainWindow):
 
     #Takes the account number from the line edit and uses it to find the matching account, if the account is found a referenced is passed to the main window
     def change_current_working_account(self):
+        
+        #If the findAccountField is numeric 
+        if (self.findAccountField.text().isnumeric()):
 
-        #Getting account number from line edit
-        currentWorkingAccountNumber = int(self.findAccountField.text())
+            #Getting account number from line edit
+            currentWorkingAccountNumber = int(self.findAccountField.text())
 
-        #Gives a reference of an account from the accountDataStore
-        self.currentWorkingAccount = self.accountDataStore.get_account_info(currentWorkingAccountNumber)
+            #Gives a reference of an account from the accountDataStore
+            self.currentWorkingAccount = self.accountDataStore.get_account_info(currentWorkingAccountNumber)
 
-        #Updates all account information to the ui
-        self.nameLabel.setText(self.currentWorkingAccount.members[0].get_memberName())
-        self.accountNumberLabel.setText(str(self.currentWorkingAccount.get_accountNumber()))
-        self.memberNameLabel.setText(self.currentWorkingAccount.members[0].get_memberName())
-        self.DOBLabel.setText(self.currentWorkingAccount.members[0].get_memberDOB())
-        self.shareLabel0.setText(self.currentWorkingAccount.shares[0].get_shareName())
-        self.balanceLabel0.setText(str(self.currentWorkingAccount.shares[0].get_currentBalance()))
+            #If there was no matching account number found, reset display to default state
+            if self.currentWorkingAccount == None:
+
+                #Updates all account information to the ui
+                self.nameLabel.setText("")
+                self.accountNumberLabel.setText("")
+                self.memberNameLabel.setText("")
+                self.DOBLabel.setText("")
+                self.shareLabel0.setText("")
+                self.balanceLabel0.setText("")
+            else:
+
+                #Updates all account information to the ui
+                self.nameLabel.setText(self.currentWorkingAccount.members[0].get_memberName())
+                self.accountNumberLabel.setText(str(self.currentWorkingAccount.get_accountNumber()))
+                self.memberNameLabel.setText(self.currentWorkingAccount.members[0].get_memberName())
+                self.DOBLabel.setText(self.currentWorkingAccount.members[0].get_memberDOB())
+                self.shareLabel0.setText(self.currentWorkingAccount.shares[0].get_shareName())
+                self.balanceLabel0.setText(str(self.currentWorkingAccount.shares[0].get_currentBalance()))
+        else:
+            
+                #Updates ui to default state
+                self.nameLabel.setText("")
+                self.accountNumberLabel.setText("")
+                self.memberNameLabel.setText("")
+                self.DOBLabel.setText("")
+                self.shareLabel0.setText("")
+                self.balanceLabel0.setText("")
+
 
 
     
